@@ -6,6 +6,10 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find(params[:id])
   end
   def new
+    @ticket = Ticket.new
+  end
+  def edit
+    @ticket = Ticket.find(params[:id])
   end
   def create
    @ticket = Ticket.new(ticket_params)
@@ -33,6 +37,6 @@ class TicketsController < ApplicationController
   end
   private
     def ticket_params
-      params.require(:tickets).permit(:title, :text)
+      params.require(:ticket).permit(:title, :text)
     end
 end
