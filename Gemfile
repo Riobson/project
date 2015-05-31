@@ -28,6 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'bootstrap-sass',       '3.2.0.0'
 gem 'rename'
+gem 'cancancan', '~> 1.10'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
