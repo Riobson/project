@@ -9,6 +9,18 @@
     <strong>Description:</strong>
     <%= ticket.description %>
   </p>
+  <p>
+    <strong>Priority:</strong>
+    <%= ticket.priority %>
+  </p>
+  <p>
+    <strong>Difficulty:</strong>
+    <%= ticket.difficulty %>
+  </p>
+  <p>
+    <strong>Status:</strong>
+    <%= ticket.status %>
+  </p>
 <%= link_to 'Edit', edit_project_ticket_path(@project, ticket) %> |
-<%= link_to 'Back', project_tickets_path(@project) %>
 <% end %>
+<%= link_to 'Back', project_tickets_path(@project) %>

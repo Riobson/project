@@ -41,4 +41,7 @@ class ProjectsController < ApplicationController
     def project_params
       params.require(:project).permit(:title, :description)
     end
+    def ticket_params
+      params.require(:ticket).permit(:title, :description, :priority, :difficulty , :status)
+    end
 end
