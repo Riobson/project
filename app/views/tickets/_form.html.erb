@@ -1,4 +1,4 @@
-<%= form_for @ticket do |f| %>
+<%= form_for [@project, @ticket] do |f| %>
  
 <% if @ticket.errors.any? %>
     <div id="error_explanation">
@@ -21,7 +21,7 @@
  
   <p>
     <%= f.label :Description %><br>
-    <%= f.text_area :text %>
+    <%= f.text_area :description %>
   </p>
   <p>
     <%= f.submit %>

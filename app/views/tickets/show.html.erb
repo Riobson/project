@@ -1,11 +1,14 @@
-<p>
-  <strong>Title:</strong>
-  <%= @ticket.title %>
-</p>
+<h2>Ticket</h2>
+<% @project.tickets.each do |ticket| %>
+  <p>
+    <strong>Title:</strong>
+    <%= ticket.title %>
+  </p>
  
-<p>
-  <strong>Description:</strong>
-  <%= @ticket.text %>
-</p>
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%= link_to 'Back', tickets_path %>
+  <p>
+    <strong>Description:</strong>
+    <%= ticket.description %>
+  </p>
+<%= link_to 'Edit', edit_project_ticket_path(@project, ticket) %> |
+<%= link_to 'Back', project_tickets_path(@project) %>
+<% end %>

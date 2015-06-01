@@ -7,6 +7,6 @@
   <strong>Description:</strong>
   <%= @project.text %>
 </p>
-<%= link_to 'Ticket List', tickets_path %> |
+<%= link_to 'Tickets', project_tickets_path(@project) %> |
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
