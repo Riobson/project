@@ -1,12 +1,12 @@
 <p>
-  <strong>Title:</strong>
+  <strong><font color="black">Title:</font></strong>
   <%= @project.title %>
 </p>
  
 <p>
-  <strong>Description:</strong>
+  <strong><font color="black">Description:</font></strong>
   <%= @project.description %>
 </p>
-<%= link_to 'Tickets', project_tickets_path(@project) %> |
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Tickets', project_tickets_path(@project) ,style: 'color:#000'%> |
+<%= link_to 'Edit', edit_project_path(@project) ,style: 'color:#000'%> |
+<%= link_to 'Back', projects_path ,style: 'color:#000'%>

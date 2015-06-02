@@ -1,20 +1,233 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title> Project </title>
-    <%= stylesheet_link_tag 'application', media: 'all',
-                                           'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-    <%= render 'layouts/shim' %>
-  </head>
-  <body>
-    <%= render 'layouts/header' %>
-    <div class="container">
-      <%= yield %>
-      <%= render 'layouts/footer' %>
-    </div>
-  </body>
-</html>
+<html lang="en">
+<head>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <title>Projekt UJ</title>
+
+    <!-- Bootstrap Core CSS -->
+  <%= stylesheet_link_tag "bootstrap.min.css" %>
+  
+  
+    <!-- Custom CSS -->
+    <%= stylesheet_link_tag "stylish-portfolio.css" %>
+  
+  
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <%= stylesheet_link_tag "fonts/css/font-awesome.min.css" %>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">Menu</a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a href="#"  onclick = $("#menu-close").click(); >UJ PROJEKT</a>
+            </li>
+           <li>
+             <% if user_signed_in? %>
+                <%= link_to "Projects", projects_path %>
+             <% end %>
+              </li>
+              <li>
+                <% if user_signed_in? %>
+                <%= link_to 'Edit Profile', edit_user_registration_path %>
+                <% end %>
+              </li>
+              <li>
+                <% if user_signed_in? %>
+                <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+                <% else %>
+                <%= link_to "Sign in", new_user_session_path  %>
+                <% end %>
+            <li>
+                <a href="#" onclick = $("#menu-close").click(); >Home</a>
+            </li>
+            <li>
+                <a href="#about" onclick = $("#menu-close").click(); >About</a>
+            </li>
+            <li>
+                <a href="#services" onclick = $("#menu-close").click(); >Services</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Header -->
+  
+    <%= render "layouts/header" %>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Uniwersytet Jagiellonski w Krakowie</h2>
+                    <p class="lead">Projekt stworzony na potrzeby zajec z przedmiotu Ruby on Rails</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Services -->
+    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <section id="services" class="services bg-primary">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Projekt stworzony przy pomocy:</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Rails Guide</strong>
+                                </h4>
+                                <p>Getting started with Ruby</p>
+                                <a href="http://guides.rubyonrails.org/getting_started.html" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-compass fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>StackOverFlow</strong>
+                                </h4>
+                                <p>Easy way, to learn </p>
+                                <a href="http://stackoverflow.com/" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-flask fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Akra</strong>
+                                </h4>
+                                <p>Ruby on rails course</p>
+                                <a href="https://gist.github.com/bslipek" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-shield fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Google</strong>
+                                </h4>
+                                <p>There is all you need</p>
+                                <a href="https://www.google.pl" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Callout -->
+    <aside class="callout">
+        <div class="text-vertical-center">
+            <h1>Już niedługo nowe realizacje!</h1>
+        </div>
+    </aside>
+
+    <!-- Call to Action -->
+    <aside class="call-to-action bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3>Przeoczyłes cos?.</h3>
+                    <a href="#" class="btn btn-lg btn-light">Do góry!</a>
+                    <a href="#footer" class="btn btn-lg btn-dark">Na dół!</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+
+
+    <!-- Footer -->
+
+  <%= render "layouts/footer" %>
+  
+    <!-- jQuery -->
+    
+  <%= javascript_include_tag 'jquery.js' %>
+  
+  
+    <!-- Bootstrap Core JavaScript -->
+
+ <%= javascript_include_tag 'bootstrap.min.js' %>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
+</body>
+
+</html>
 

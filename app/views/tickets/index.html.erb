@@ -1,21 +1,28 @@
-<h1>List of Tickets</h1>
-<table>
+<h1><font color="black">List of Tickets</font></h1>
+<table id="tabela">
   <tr>
-    <th>Title</th>
-    <th>Description</th>
+    <th><font color="white"><center>Title:</center></font></th> &nbsp
+    <th><font color="white"><center>Description:</center></font></th> &nbsp
+    <th><font color="white"><center>Priority:</center></font></th> &nbsp
+    <th><font color="white"><center>Difficulty:</center></font></th> &nbsp
+    <th><font color="white"><center>Status:</center></font></th> &nbsp
+    <th><font color="black"><center>Action:</center></font></th> &nbsp
   </tr>
  
   <% @tickets.each do |ticket| %>
     <tr>
-      <td><%= ticket.title %></td>
-      <td><%= ticket.description %></td>
-      <td><%= link_to 'Show', project_ticket_path(@project, ticket) %></td>
-      <td><%= link_to 'Edit', edit_project_ticket_path(@project, ticket) %> </td>
-      <td><%= link_to 'Destroy',  project_ticket_path(@project, ticket),
+      <td><font color="white"><%= ticket.title %> </font></td> &nbsp
+      <td><font color="white"><%= ticket.description %> </font></td> &nbsp
+      <td><font color="white"><%= ticket.priority %></font></td> &nbsp
+      <td><font color="white"><%= ticket.difficulty %></font></td> &nbsp
+      <td><font color="white"><%= ticket.status %></font></td> &nbsp
+      <td><%= link_to 'Show', project_ticket_path(@project, ticket) ,style: 'color:#000' %> &nbsp
+      <%= link_to 'Edit', edit_project_ticket_path(@project, ticket),style: 'color:#000' %> &nbsp 
+        <%= link_to 'Destroy',  project_ticket_path(@project, ticket),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+              data: { confirm: 'Are you sure?' } ,style: 'color:#000'%> </td>
     </tr>
   <% end %>
+<%= link_to 'New Ticket', new_project_ticket_path ,style: 'color:#000'%> |
+<%= link_to 'Back', project_path(@project) ,style: 'color:#000'%>
 </table>
-<%= link_to 'New Ticket', new_project_ticket_path %> |
-<%= link_to 'Back', project_path(@project) %>

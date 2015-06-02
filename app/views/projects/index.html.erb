@@ -1,21 +1,22 @@
-<h1>List of Projects</h1>
+<h1><font color="black">List of Projects</font></h1>
  
-<table>
+<table id="tabela2">
   <tr>
-    <th>Title</th>
-    <th>Description</th>
+    <th><font color="white"><center>Title:</center></font></th> &nbsp
+    <th><font color="white"><center>Description:</center></font></th> &nbsp
+    <th><font color="black"><center>Action:</center></font></th> &nbsp
   </tr>
  
   <% @projects.each do |project| %>
     <tr>
-      <td><%= project.title %></td>
-      <td><%= project.description %></td>
-      <td><%= link_to 'Show ', project_path(project) %></td>
-      <td><%= link_to 'Edit ', edit_project_path(project) %></td>
-      <td><%= link_to 'Destroy ', project_path(project),
+      <td><font color="white"><%= project.title %></font></td>
+      <td><font color="white"><%= project.description %></font></td>
+      <td><%= link_to 'Show ', project_path(project) ,style: 'color:#000' %> &nbsp 
+      <%= link_to 'Edit ', edit_project_path(project) ,style: 'color:#000' %> &nbsp 
+      <%= link_to 'Destroy ', project_path(project),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+              data: { confirm: 'Are you sure?' } ,style: 'color:#000' %></td>
     </tr>
   <% end %>
+   <%= link_to 'New Project', new_project_path ,style: 'color:#000'%>
 </table>
- <%= link_to 'New Project', new_project_path %>

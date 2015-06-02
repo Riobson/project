@@ -1,26 +1,26 @@
-<h2>Ticket</h2>
+<h2><font colot="black">Ticket</font></h2>
 <% @project.tickets.each do |ticket| %>
   <p>
-    <strong>Title:</strong>
-    <%= ticket.title %>
+    <strong><font color="black">Title:</font></strong>
+    <font color="black"><%= ticket.title %></font>
   </p>
  
   <p>
-    <strong>Description:</strong>
-    <%= ticket.description %>
+    <strong><font color="black">Description:</font></strong>
+    <font color="black"><%= ticket.description %></font>
   </p>
   <p>
-    <strong>Priority:</strong>
-    <%= ticket.priority %>
+    <strong><font color="black">Priority:</font></strong>
+    <font color="black"><%= ticket.priority %></font>
   </p>
   <p>
-    <strong>Difficulty:</strong>
-    <%= ticket.difficulty %>
+    <strong><font color="black">Difficulty:</font></strong>
+    <font color="black"><%= ticket.difficulty %></font>
   </p>
   <p>
-    <strong>Status:</strong>
-    <%= ticket.status %>
+    <strong><font color="black">Status:</font></strong>
+    <font color="black"><%= ticket.status %></font>
   </p>
-<%= link_to 'Edit', edit_project_ticket_path(@project, ticket) %> |
+<%= link_to 'Edit', edit_project_ticket_path(@project, ticket) ,style: 'color:#000'%> |
 <% end %>
-<%= link_to 'Back', project_tickets_path(@project) %>
+<%= link_to 'Back', project_tickets_path(@project) ,style: 'color:#000'%>

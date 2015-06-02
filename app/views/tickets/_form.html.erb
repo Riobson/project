@@ -15,24 +15,24 @@
   <% end %>
  
   <p>
-    <%= f.label :title %><br>
+    <font color ="black">  <%= f.label :title %> </font><br>
     <%= f.text_field :title %>
   </p>
  
   <p>
-    <%= f.label :Description %><br>
+    <font color ="black"><%= f.label :Description %></font><br>
     <%= f.text_area :description %>
   </p>
   <p>
-    <%= f.label :priority %><br>
+    <font color ="black"><%= f.label :priority %></font><br>
     <%= f.select :priority, [["",""], ["Low", "Low"], ["High", "High"]] %>
   </p>
   <p>
-    <%= f.label :difficulty %><br>
+    <font color ="black"><%= f.label :difficulty %></font><br>
     <%= f.select :difficulty, [["",""], ["Easy", "Easy"], ["Medium", "Medium"], ["Hard", "Hard"]] %>
   </p>
   <p>
-    <%= f.label :status %><br>
+    <font color ="black"><%= f.label :status %></font><br>
     <%= f.select :status, [["",""], ["Open", "Open"], ["Closed", "Closed"], ["Canceled", "Canceled"]] %>
   </p>
   <p>
