@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require cookies_eu
 //= require jquery
 //= reqiore jquery_ui
 //= require jquery_ujs
